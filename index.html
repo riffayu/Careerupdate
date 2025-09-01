@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <title>RIASEC Career Assessment</title>
+</head>
+<body>
+    <h1>RIASEC Questionnaire</h1>
+    <p>Rate each statement from 1 (Strongly Disagree) to 5 (Strongly Agree).</p>
+    <form method="post">
+        {% for q in questions %}
+        <p>{{ q.text }}</p>
+        <label><input type="radio" name="{{ q.id }}" value="1"> 1</label>
+        <label><input type="radio" name="{{ q.id }}" value="2"> 2</label>
+        <label><input type="radio" name="{{ q.id }}" value="3"> 3</label>
+        <label><input type="radio" name="{{ q.id }}" value="4"> 4</label>
+        <label><input type="radio" name="{{ q.id }}" value="5"> 5</label>
+        <br><br>
+        {% endfor %}
+        <label>Email: <input type="email" name="email" required></label><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
